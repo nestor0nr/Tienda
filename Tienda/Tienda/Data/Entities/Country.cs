@@ -12,5 +12,8 @@ namespace Tienda.Data.Entities
         [Required(ErrorMessage ="El campo {0} es obligatorio")]
         public string? Name { get; set; }
 
+        public ICollection<State> States { get; set; } //1 pais Tiene una lista de departamento 
+        [Display(Name = "Departamento")]
+        public int StatesNumber => States== null ? 0 : States.Count;
     }
 }
