@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Tienda.Data.Entities
+namespace Tienda.Models
 {
-    public class City
+    public class CityViewModel
     {
         public int Id { get; set; }
 
@@ -11,9 +11,6 @@ namespace Tienda.Data.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string? Name { get; set; }
 
-        public State state { get; set; } //1 Ciudad pertenece a una departamento
-
-        public ICollection<User> Users { get; set; } //1 ciudad tiene muchos usuarios
-
+        public int StateId { get; set; } //para saber a que Departamento pertenece la ciudad
     }
 }

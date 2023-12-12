@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Tienda.Data.Entities;
 
 namespace Tienda.Data
 {
-    public class DataContext: DbContext
+    public class DataContext: IdentityDbContext<User>
+
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

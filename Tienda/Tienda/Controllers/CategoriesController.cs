@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Metrics;
 using Tienda.Data;
@@ -6,6 +8,8 @@ using Tienda.Data.Entities;
 
 namespace Tienda.Controllers
 {
+    [Authorize(Roles = "Admin")]
+   
     public class CategoriesController : Controller
     {
         public DataContext _context { get; }
