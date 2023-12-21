@@ -12,7 +12,7 @@ using Tienda.Models;
 
 namespace Tienda.Controllers
 {
-   // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class CountriesController : Controller
     {
         private readonly DataContext _context;

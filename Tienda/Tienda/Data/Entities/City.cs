@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Tienda.Data.Entities
 {
@@ -11,6 +12,7 @@ namespace Tienda.Data.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string? Name { get; set; }
 
+        [JsonIgnore]
         public State state { get; set; } //1 Ciudad pertenece a una departamento
 
         public ICollection<User> Users { get; set; } //1 ciudad tiene muchos usuarios

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Tienda.Data.Entities
 {
@@ -11,6 +12,7 @@ namespace Tienda.Data.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string? Name { get; set; }
 
+        [JsonIgnore]
         public  Country country { get; set; }//1 Departamento pertenece a 1 pais
 
         public ICollection<City> Cities { get; set; } //1 de departamento tiene una lista de Ciuddades

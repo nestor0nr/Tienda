@@ -42,6 +42,7 @@ namespace Tienda.Controllers
         }
 
         // GET: Countries/Create
+        
         public IActionResult Create()
         {
             return View();
@@ -139,6 +140,7 @@ namespace Tienda.Controllers
         }
 
         // GET: Countries/Delete/5
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Categories == null)

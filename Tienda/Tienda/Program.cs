@@ -27,6 +27,7 @@ builder.Services.AddIdentity<User, IdentityRole>(cfg =>
     cfg.Password.RequireUppercase = false;
 }).AddEntityFrameworkStores<DataContext>();
 
+//https://www.youtube.com/watch?v=w-CP_dnRYaI
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/NotAuthorized";
@@ -40,6 +41,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddTransient<SeedDb>();//Para ejecutar la inyeccion de datos.
 builder.Services.AddScoped<IUserHelper,UserHelper>();//Para ejecutar la inyeccion del UserHelper pero le inyecto la interfas, para ver temas de pruebas unitarias
 builder.Services.AddScoped<ICombosHelper, CombosHelper>();//Para ejecutar la inyeccion del CombosHelper pero le inyecto la interfas, para ver temas de pruebas unitarias
+builder.Services.AddScoped<IBlobHelper, BlobHelper>();//Para ejecutar la inyeccion del BlobHelper para subir las imagenes a un azure
 
 var app = builder.Build();
 //Como en esta clase no se pueden hacer inyecciones de datos se hace a mano con el siguente codigo
