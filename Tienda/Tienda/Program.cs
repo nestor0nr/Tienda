@@ -25,6 +25,9 @@ builder.Services.AddIdentity<User, IdentityRole>(cfg =>
     cfg.Password.RequireLowercase = false;
     cfg.Password.RequireNonAlphanumeric = false;
     cfg.Password.RequireUppercase = false;
+    cfg.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);//https://www.youtube.com/watch?v=78OFVQyDh1U
+    cfg.Lockout.MaxFailedAccessAttempts = 3;
+    cfg.Lockout.AllowedForNewUsers = true;
 }).AddEntityFrameworkStores<DataContext>();
 
 //https://www.youtube.com/watch?v=w-CP_dnRYaI
